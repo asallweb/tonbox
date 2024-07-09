@@ -52,6 +52,27 @@
             }));
         }
     }), 0);
+    window.addEventListener("load", (function() {
+        setTimeout((function() {
+            var elements = document.querySelectorAll(".hasAnimation");
+            elements.forEach((function(element) {
+                var animateName = element.getAttribute("data-animate");
+                element.classList.add("hidden");
+                var observer = new IntersectionObserver((function(entries) {
+                    entries.forEach((function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.remove("hidden");
+                            entry.target.classList.add("visible", "animate__animated", animateName);
+                            observer.unobserve(entry.target);
+                        }
+                    }));
+                }), {
+                    threshold: 0
+                });
+                observer.observe(element);
+            }));
+        }), 200);
+    }));
     window["FLS"] = true;
     menuInit();
 })();

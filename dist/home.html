@@ -6,15 +6,82 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240709160618">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240709173750">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<div class="wrapper">
-		<header class="header">
+	<style>
+		.loader {
+			width: 80px;
+			height: 80px;
+			border: 12px solid #f3f3f3;
+			border-radius: 50%;
+			border-top: 12px solid #0088cc;
+			-webkit-animation: spin 1s linear infinite;
+			animation: spin 1s linear infinite;
+		}
+
+		#preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@-webkit-keyframes spin {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.wrapper {
+			display: none;
+		}
+	</style>
+	<div id="preloader">
+		<div class="loader"></div>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const startTime = new Date().getTime();
+
+			function hidePreloader() {
+				const currentTime = new Date().getTime();
+				const elapsedTime = currentTime - startTime;
+				if (elapsedTime < 800) {
+					setTimeout(hidePreloader, 800 - elapsedTime);
+				} else {
+					document.getElementById("preloader").style.display = "none";
+					document.getElementById("wrapper").style.display = "block";
+				}
+			}
+			window.onload = hidePreloader;
+		});
+	</script>
+	<div class="wrapper" id="wrapper">
+		<header class="header hasAnimation animate__animated hidden " data-animate="animate__fadeInDown">
 			<div class="__container">
 				<div class="header__wrapper">
 					<a href="" class="header__logo">
@@ -40,16 +107,18 @@
 			<section class="hero">
 				<div class="__container">
 					<div class="hero__wrapper">
-						<div class="hero__logo">
+						<div class="hero__logo hasAnimation animate__animated hidden " data-animate="animate__fadeInDown">
 							<img src="img/logo/logo-big.webp" class="_desktop">
 							<img src="img/logo/logo-big-mobile.webp" class="_mobile">
 						</div>
 						<div class="hero__content">
-							<div class="hero__title">The future has arrived, and its name is @tonbox!</div>
-							<div class="hero__text">Created and driven by a team of top crypto enthusiasts and gamers, this project is about to change everything you know. We take the best of both worlds and combine them into crypto-driven games that focus on fun, earnings, and earning through fun! Join us on our journey, and let’s rock this crypto game together!</div>
-							<a href="" class="hero__link telegram">
-								<img src="img/icons/telegram.svg">
-							</a>
+							<div class="hero__title hasAnimation animate__animated hidden " data-animate="animate__fadeInDown">The future has arrived, and its name is @tonbox!</div>
+							<div class="hero__text hasAnimation animate__animated hidden " data-animate="animate__fadeInDown">Created and driven by a team of top crypto enthusiasts and gamers, this project is about to change everything you know. We take the best of both worlds and combine them into crypto-driven games that focus on fun, earnings, and earning through fun! Join us on our journey, and let’s rock this crypto game together!</div>
+							<div class="telegram hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
+								<a href="" class="hero__link">
+									<img src="img/icons/telegram.svg">
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -59,12 +128,14 @@
 					<div class="corn__wrapper">
 						<div class="corn__left">
 							<div class="corn__logo-wrapper">
-								<div class="corn__logo">
+								<div class="corn__logo hasAnimation animate__animated hidden " data-animate="animate__fadeInDown">
 									<img src="img/logo/corn.webp">
 								</div>
 							</div>
-							<a href="" class="btn">Play now</a>
-							<div class="corn__socials socials">
+							<div class="hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
+								<a href="" class="btn">Play now</a>
+							</div>
+							<div class="corn__socials socials hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
 								<a href="" class="socials__link _tg">
 									<img src="img/icons/telegram.svg">
 								</a>
@@ -77,13 +148,13 @@
 							</div>
 						</div>
 						<div class="corn__right">
-							<div class="corn__title">CORN BATTLES</div>
-							<div class="corn__content">
+							<div class="corn__title hasAnimation animate__animated hidden " data-animate="animate__fadeInRight">CORN BATTLES</div>
+							<div class="corn__content hasAnimation animate__animated hidden " data-animate="animate__fadeInRight">
 								<p>A new, exciting battler game with charismatic characters: the corn cobs! They might look like cute little things, but their vigilance and thirst for victory have no limits.</p>
 								<p>Build your unique squad, defeat other players and earn with us!</p>
 								<p>The corn cobs are NFTs that your can sell, swap and.webpt to others. But be careful - it might captivate you for many, many hours and make you rich! Don’t say we didn’t warn you!</p>
 							</div>
-							<img src="img/content/corn_heroes.webp" class="corn__image-heroes">
+							<img src="img/content/corn_heroes.webp" class="corn__image-heroes hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
 						</div>
 					</div>
 				</div>
@@ -92,23 +163,25 @@
 				<div class="__container">
 					<div class="boom__wrapper">
 						<div class="boom__left">
-							<div class="boom__title">Your time - your money!</div>
-							<div class="boom__subtitle">Real BOOM in Telegram!</div>
-							<div class="boom__content">
+							<div class="boom__title hasAnimation animate__animated hidden " data-animate="animate__fadeInLeft">Your time - your money!</div>
+							<div class="boom__subtitle hasAnimation animate__animated hidden " data-animate="animate__fadeInLeft">Real BOOM in Telegram!</div>
+							<div class="boom__content hasAnimation animate__animated hidden " data-animate="animate__fadeInLeft">
 								<p>$BOOM: Loud Coin by @TonBox gives new opportunities for everyone.</p>
 								<p>Real Money Giveaways: 500 USDT daily, 5000 USDT weekly, and 100,000 USDT every month! EARN and make it loud with $BOOM: Loud Coin!</p>
 								<p>Every 3 hours, you can get more $BOOMCoins. Start now, collect $BOOMCoins, and who knows how many unique rewards you will get in the future.</p>
 							</div>
-							<img src="img/content/boom-left.webp" class="boom__image">
+							<img src="img/content/boom-left.webp" class="boom__image hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
 						</div>
 						<div class="boom__right">
-							<div class="boom__logo-wrapper">
+							<div class="boom__logo-wrapper hasAnimation animate__animated hidden " data-animate="animate__fadeInDown">
 								<div class="boom__logo">
 									<img src="img/logo/boom.webp">
 								</div>
 							</div>
-							<a href="" class="btn">Play now</a>
-							<div class="boom__socials socials">
+							<div class="hasAnimation animate__animated hidden " data-animate="animate__fadeInUp" style="width: 100%;">
+								<a href="" class="btn">Play now</a>
+							</div>
+							<div class="boom__socials socials hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
 								<a href="" class="socials__link _tg">
 									<img src="img/icons/telegram.svg">
 								</a>
@@ -116,7 +189,7 @@
 									<img src="img/icons/x.svg">
 								</a>
 							</div>
-							<img src="img/content/boom-right.webp" class="boom__image _desktop">
+							<img src="img/content/boom-right.webp" class="boom__image _desktop hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
 						</div>
 					</div>
 				</div>
@@ -125,13 +198,13 @@
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="coins-list">
-					<img src="img/background/coins1.webp" class="coins-list__item _item-1">
-					<img src="img/background/coins2.webp" class="coins-list__item _item-2">
-					<img src="img/background/coins3.webp" class="coins-list__item _item-3">
+					<img src="img/background/coins1.webp" class="coins-list__item _item-1 hasAnimation animate__animated hidden " data-animate="animate__fadeInLeft">
+					<img src="img/background/coins2.webp" class="coins-list__item _item-2 hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
+					<img src="img/background/coins3.webp" class="coins-list__item _item-3 hasAnimation animate__animated hidden " data-animate="animate__fadeInRight">
 				</div>
 			</div>
 			<div class="footer__container">
-				<div class="footer__text">
+				<div class="footer__text hasAnimation animate__animated hidden " data-animate="animate__fadeInUp">
 					<div class="footer__text-item">© TonBox, 2024</div>
 					<div class="footer__text-item">All rights reserved. All trademarks referenced herein are the properties of their respective owners. <a href="">Privacy Policy</a></div>
 					<div class="footer__text-item">
@@ -141,7 +214,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240709160618"></script>
+	<script src="js/app.min.js?_v=20240709173750"></script>
 </body>
 
 </html>
