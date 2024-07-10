@@ -4003,7 +4003,7 @@ h6 {
   top: -44px
 }
 .hero .__container {
-  background: url(../img/background/hero.webp) bottom center no-repeat;
+  background: url(../img/background/hero.png) bottom -100px center no-repeat;
   background-size: contain;
   height: 100%
 }
@@ -4033,6 +4033,9 @@ h6 {
   color: #08c;
   line-height: 1.18
 }
+.hero__text p:not(:last-child) {
+  margin-bottom: 15px
+}
 .hero__link {
   transition: all .3s ease-in-out
 }
@@ -4040,7 +4043,7 @@ h6 {
   opacity: .7
 }
 .corn {
-  background: url(../img/background/corn.webp) top center repeat-x #091a29;
+  background: url(../img/background/corn.png) top center repeat-x #091a29;
   overflow: hidden
 }
 .corn__wrapper {
@@ -4057,7 +4060,7 @@ h6 {
 .corn__logo::after {
   content: "";
   display: block;
-  background: url(../img/background/corn-fx.webp) center center no-repeat;
+  background: url(../img/background/corn-fx.png) center center no-repeat;
   position: absolute;
   width: 822px;
   height: 863px;
@@ -4103,7 +4106,7 @@ h6 {
   bottom: -10px
 }
 .boom {
-  background: url(../img/background/boom-sky.webp) top right no-repeat;
+  background: url(../img/background/boom-sky.png) top right no-repeat;
   background-size: 1163px 579px;
   overflow: hidden
 }
@@ -4147,7 +4150,7 @@ h6 {
 .boom__logo::after {
   content: "";
   display: block;
-  background: url(../img/background/boom-fx.webp) center center no-repeat;
+  background: url(../img/background/boom-fx.png) center center no-repeat;
   position: absolute;
   width: 762px;
   height: 641px;
@@ -4191,7 +4194,7 @@ h6 {
     height: 16.6875rem
   }
   .hero {
-    height: 59rem
+    height: 50rem
   }
   .hero__wrapper {
     gap: 3.75rem
@@ -4288,7 +4291,7 @@ h6 {
   }
   .hero .__container {
     background-size: 670px 565px;
-    background-position: bottom -50px center
+    background-position: bottom -70px center
   }
   .hero__wrapper {
     flex-direction: column;
@@ -4344,7 +4347,7 @@ h6 {
     height: 11.5rem
   }
   .hero {
-    height: 46.75rem
+    height: 43.75rem
   }
   .hero__wrapper {
     gap: 2rem
@@ -4581,14 +4584,14 @@ h6 {
       height: calc(11.5rem + 5.1875 * (100vw - 20rem)/ 66.875)
     }
   }
-  @supports (height:clamp(46.75rem ,43.0864485981rem + 18.3177570093vw ,59rem)) {
+  @supports (height:clamp(43.75rem ,41.8808411215rem + 9.3457943925vw ,50rem)) {
     .hero {
-      height: clamp(46.75rem ,43.0864485981rem + 18.3177570093vw ,59rem)
+      height: clamp(43.75rem ,41.8808411215rem + 9.3457943925vw ,50rem)
     }
   }
-  @supports not (height:clamp(46.75rem ,43.0864485981rem + 18.3177570093vw ,59rem)) {
+  @supports not (height:clamp(43.75rem ,41.8808411215rem + 9.3457943925vw ,50rem)) {
     .hero {
-      height: calc(46.75rem + 12.25 * (100vw - 20rem)/ 66.875)
+      height: calc(43.75rem + 6.25 * (100vw - 20rem)/ 66.875)
     }
   }
   @supports (gap:clamp(2rem ,1.476635514rem + 2.6168224299vw ,3.75rem)) {
