@@ -4395,6 +4395,9 @@ ol {
   }
 }
 @media (max-width:768px) {
+  .popup__content {
+    padding: 15px 15px 100px
+  }
   .coins-list__item {
     max-width: 40%
   }
