@@ -3968,7 +3968,10 @@ body::after {
 }
 .btn._maxwdth-450 {
   margin-left: 0;
-  margin-top: 30px
+  margin-top: 30px;
+  display: block;
+  text-align: center;
+  padding: 5px 0
 }
 .btn span {
   color: #ffd200
@@ -4295,6 +4298,9 @@ ol {
   .btn._maxwdth-450 {
     max-width: 28.125rem
   }
+  .btn._maxwdth-450 {
+    font-size: 1.5rem
+  }
   .footer {
     font-size: 1.125rem
   }
@@ -4450,6 +4456,9 @@ ol {
   }
   .btn._maxwdth-450 {
     max-width: 21.25rem
+  }
+  .btn._maxwdth-450 {
+    font-size: 1.25rem
   }
   .footer {
     font-size: .5rem
@@ -4676,6 +4685,16 @@ ol {
   @supports not (max-width:clamp(21.25rem ,19.1939252336rem + 10.2803738318vw ,28.125rem)) {
     .btn._maxwdth-450 {
       max-width: calc(21.25rem + 6.875 * (100vw - 20rem)/ 66.875)
+    }
+  }
+  @supports (font-size:clamp(1.25rem ,1.1752336449rem + 0.3738317757vw ,1.5rem)) {
+    .btn._maxwdth-450 {
+      font-size: clamp(1.25rem ,1.1752336449rem + .3738317757vw ,1.5rem)
+    }
+  }
+  @supports not (font-size:clamp(1.25rem ,1.1752336449rem + 0.3738317757vw ,1.5rem)) {
+    .btn._maxwdth-450 {
+      font-size: calc(1.25rem + .25 * (100vw - 20rem)/ 66.875)
     }
   }
   @supports (font-size:clamp(0.5rem ,0.3130841121rem + 0.9345794393vw ,1.125rem)) {

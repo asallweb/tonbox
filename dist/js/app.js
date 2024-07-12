@@ -415,32 +415,6 @@
             }));
         }), 200);
     }));
-    document.addEventListener("DOMContentLoaded", (function() {
-        const popupTriggers = document.querySelectorAll('[data-popup="#popup"]');
-        const popup = document.getElementById("popup");
-        popupTriggers.forEach((trigger => {
-            trigger.addEventListener("click", (function() {
-                popup.classList.add("visible");
-                const observer = new IntersectionObserver((entries => {
-                    entries.forEach((entry => {
-                        if (entry.isIntersecting) {
-                            const element = entry.target;
-                            const animateName = element.getAttribute("data-animate");
-                            element.classList.add("animate__animated", animateName);
-                            observer.unobserve(element);
-                        }
-                    }));
-                }), {
-                    threshold: 0
-                });
-                const animatedElements = popup.querySelectorAll(".hasAnimation");
-                animatedElements.forEach((element => {
-                    element.classList.add("hidden");
-                    observer.observe(element);
-                }));
-            }));
-        }));
-    }));
     window["FLS"] = true;
     menuInit();
     pageNavigation();
