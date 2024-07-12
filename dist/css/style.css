@@ -4455,7 +4455,7 @@ ol {
     height: 2.875rem
   }
   .btn._maxwdth-450 {
-    max-width: 21.25rem
+    max-width: 22.5rem
   }
   .btn._maxwdth-450 {
     font-size: 1.25rem
@@ -4677,14 +4677,14 @@ ol {
       height: calc(2.875rem + 1.25 * (100vw - 20rem)/ 66.875)
     }
   }
-  @supports (max-width:clamp(21.25rem ,19.1939252336rem + 10.2803738318vw ,28.125rem)) {
+  @supports (max-width:clamp(22.5rem ,20.8177570093rem + 8.4112149533vw ,28.125rem)) {
     .btn._maxwdth-450 {
-      max-width: clamp(21.25rem ,19.1939252336rem + 10.2803738318vw ,28.125rem)
+      max-width: clamp(22.5rem ,20.8177570093rem + 8.4112149533vw ,28.125rem)
     }
   }
-  @supports not (max-width:clamp(21.25rem ,19.1939252336rem + 10.2803738318vw ,28.125rem)) {
+  @supports not (max-width:clamp(22.5rem ,20.8177570093rem + 8.4112149533vw ,28.125rem)) {
     .btn._maxwdth-450 {
-      max-width: calc(21.25rem + 6.875 * (100vw - 20rem)/ 66.875)
+      max-width: calc(22.5rem + 5.625 * (100vw - 20rem)/ 66.875)
     }
   }
   @supports (font-size:clamp(1.25rem ,1.1752336449rem + 0.3738317757vw ,1.5rem)) {
